@@ -32,6 +32,11 @@ const routes: RouteRecordRaw[] = [
     name: 'MovieDetail',
     component: () => import('@/views/MovieDetailView.vue'),
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    redirect: '/',
+  },
 ]
 
 const router = createRouter({
