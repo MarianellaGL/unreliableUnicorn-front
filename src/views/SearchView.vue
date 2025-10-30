@@ -32,8 +32,8 @@ const handleSubmit = (e: Event) => {
   searchMovies()
 }
 
-const getPosterUrl = (posterUrl: string | null) => {
-  if (!posterUrl) return null
+const getPosterUrl = (posterUrl: string | null): string | undefined => {
+  if (!posterUrl) return undefined
 
   // Check if it's already a full URL
   if (posterUrl.startsWith('http')) {

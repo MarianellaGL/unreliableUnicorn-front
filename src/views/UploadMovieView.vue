@@ -51,7 +51,7 @@ const handleSubmit = async () => {
   loading.value = true
 
   try {
-    const uploadedMovie = await movieApi.upload(form.value)
+    await movieApi.upload(form.value)
     success.value = true
 
     // Reset form
