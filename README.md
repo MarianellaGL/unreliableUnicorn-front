@@ -256,19 +256,48 @@ npm run build
 
 Outputs to `dist/` directory.
 
+### Deploy to Render (Recommended)
+
+1. **Connect Your Repository**
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click "New" → "Static Site"
+   - Connect your GitHub/GitLab repository
+
+2. **Configure Build Settings**
+   - **Build Command**: `npm install && npm run build`
+   - **Publish Directory**: `dist`
+
+3. **Set Environment Variables**
+   - `VITE_API_BASE_URL`: `https://unreliableunicorn-api.onrender.com`
+   - `VITE_API_KEY`: Your API key
+
+4. **Deploy**
+   - The `render.yaml` file is already configured for automatic deployment
+   - Push to your main branch to trigger builds
+
+> The `_redirects` file ensures Vue Router works correctly with direct URL access.
+
 ### Deploy to Vercel
 
 ```bash
 vercel deploy
 ```
 
-Don't forget to set environment variables in your hosting platform!
+Set environment variables in Vercel dashboard:
+- `VITE_API_BASE_URL`
+- `VITE_API_KEY`
 
 ### Deploy to Netlify
 
 ```bash
 netlify deploy --prod
 ```
+
+Set environment variables in Netlify dashboard:
+- `VITE_API_BASE_URL`
+- `VITE_API_KEY`
+
+The `public/_redirects` file ensures proper routing.
 
 ---
 
